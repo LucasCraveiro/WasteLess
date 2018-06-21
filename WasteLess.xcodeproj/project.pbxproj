@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D19EE6620DC44E3006551A8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6520DC44E3006551A8 /* Food.swift */; };
 		3D19EE6820DC64B7006551A8 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */; };
+		3D19EE6A20DC69F4006551A8 /* addFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */; };
 		3DCB839020D9B6E100F18374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB838F20D9B6E100F18374 /* AppDelegate.swift */; };
 		3DCB839220D9B6E100F18374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB839120D9B6E100F18374 /* ViewController.swift */; };
 		3DCB839520D9B6E100F18374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB839320D9B6E100F18374 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		3D19EE6520DC44E3006551A8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
+		3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFoodViewController.swift; sourceTree = "<group>"; };
 		3DCB838C20D9B6E100F18374 /* WasteLess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WasteLess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCB838F20D9B6E100F18374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB839120D9B6E100F18374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				3DCB839620D9B6E100F18374 /* WasteLess.xcdatamodeld */,
 				3D19EE6520DC44E3006551A8 /* Food.swift */,
 				3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */,
+				3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */,
 			);
 			path = WasteLess;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D19EE6A20DC69F4006551A8 /* addFoodViewController.swift in Sources */,
 				3DCB839220D9B6E100F18374 /* ViewController.swift in Sources */,
 				3D19EE6620DC44E3006551A8 /* Food.swift in Sources */,
 				3D19EE6820DC64B7006551A8 /* customTableViewCell.swift in Sources */,

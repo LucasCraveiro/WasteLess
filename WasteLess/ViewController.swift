@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return groceryList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,9 +33,9 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
         
-        return UITableViewCell()
+        return cell
     }
 }
 
