@@ -10,6 +10,10 @@ import UIKit
 
 class customTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var foodName: UILabel!
+    @IBOutlet weak var expiryDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
