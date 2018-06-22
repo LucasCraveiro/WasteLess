@@ -20,15 +20,28 @@ class addFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var components = DateComponents()
-        components.year = -100
-        let minDate = Calendar.current.date(byAdding: components, to: Date())
+        self.textFood.delegate = self
         
+        // Adjusting minimumDate (DatePicker for current day)
+        let currentDate = Date()
+        self.datePicker.minimumDate = currentDate
         
-        self.datePicker.minimumDate = minDate
-
     }
 
+    @IBAction func addFood(_ sender: Any) {
+        print("ok")
+        
+    }
     
-
 }
+// Keyboard goes down when you type return
+extension addFoodViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+
+

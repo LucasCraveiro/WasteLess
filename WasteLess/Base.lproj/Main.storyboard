@@ -98,20 +98,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your food with its respective expiry date:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Z-Xj-Dbg">
-                                <rect key="frame" x="10" y="84" width="355" height="62.5"/>
+                                <rect key="frame" x="10" y="69" width="355" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your food" textAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="7ri-hV-aer">
-                                <rect key="frame" x="20" y="180" width="335" height="38"/>
+                                <rect key="frame" x="20" y="141.5" width="335" height="38"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rKd-CQ-Gc7">
-                                <rect key="frame" x="0.0" y="252" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="551396294.200176">
                                     <!--2018-06-22 21:38:14 +0000-->
                                 </date>
@@ -119,15 +119,29 @@
                                     <!--2023-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR0-eB-E7V">
+                                <rect key="frame" x="70" y="413.5" width="235" height="37"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFood:" destination="rbE-aP-sG0" eventType="touchUpInside" id="3pn-tD-4ps"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="a2Z-Xj-Dbg" firstAttribute="top" secondItem="Npq-3d-pLY" secondAttribute="top" constant="20" id="2HZ-Dn-Gol"/>
+                            <constraint firstItem="a2Z-Xj-Dbg" firstAttribute="top" secondItem="Npq-3d-pLY" secondAttribute="top" constant="5" id="2HZ-Dn-Gol"/>
+                            <constraint firstItem="Npq-3d-pLY" firstAttribute="trailing" secondItem="JR0-eB-E7V" secondAttribute="trailing" constant="70" id="3pQ-kX-iw4"/>
                             <constraint firstItem="Npq-3d-pLY" firstAttribute="trailing" secondItem="7ri-hV-aer" secondAttribute="trailing" constant="20" id="8iX-Kp-jrD"/>
-                            <constraint firstItem="rKd-CQ-Gc7" firstAttribute="top" secondItem="7ri-hV-aer" secondAttribute="bottom" constant="34" id="JU0-kg-3Qk"/>
+                            <constraint firstItem="rKd-CQ-Gc7" firstAttribute="top" secondItem="7ri-hV-aer" secondAttribute="bottom" constant="10" id="JU0-kg-3Qk"/>
+                            <constraint firstItem="JR0-eB-E7V" firstAttribute="top" secondItem="rKd-CQ-Gc7" secondAttribute="bottom" constant="8" id="O7g-zD-QkY"/>
                             <constraint firstItem="rKd-CQ-Gc7" firstAttribute="trailing" secondItem="Npq-3d-pLY" secondAttribute="trailing" id="QgV-n2-QIB"/>
-                            <constraint firstItem="7ri-hV-aer" firstAttribute="top" secondItem="a2Z-Xj-Dbg" secondAttribute="bottom" constant="33.5" id="TtF-6c-0q8"/>
+                            <constraint firstItem="7ri-hV-aer" firstAttribute="top" secondItem="a2Z-Xj-Dbg" secondAttribute="bottom" constant="10" id="TtF-6c-0q8"/>
                             <constraint firstItem="7ri-hV-aer" firstAttribute="leading" secondItem="Npq-3d-pLY" secondAttribute="leading" constant="20" id="ccy-Tb-GIZ"/>
+                            <constraint firstItem="JR0-eB-E7V" firstAttribute="leading" secondItem="Npq-3d-pLY" secondAttribute="leading" constant="70" id="m8N-oC-1mG"/>
                             <constraint firstItem="rKd-CQ-Gc7" firstAttribute="leading" secondItem="Npq-3d-pLY" secondAttribute="leading" id="nFn-FF-9yN"/>
                             <constraint firstAttribute="trailing" secondItem="a2Z-Xj-Dbg" secondAttribute="trailing" constant="10" id="o9L-HT-ggt"/>
                             <constraint firstItem="a2Z-Xj-Dbg" firstAttribute="leading" secondItem="Npq-3d-pLY" secondAttribute="leading" constant="10" id="oxD-aC-vEg"/>
@@ -142,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMO-Ml-8he" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="132"/>
+            <point key="canvasLocation" x="1581.5999999999999" y="131.78410794602701"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1xd-cb-oWr">
