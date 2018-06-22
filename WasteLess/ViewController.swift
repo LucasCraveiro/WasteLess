@@ -34,8 +34,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let food = groceryList[indexPath.row]
+        
         let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
         
+        cell.foodName.text = food.value(forKeyPath: "name") as? String
+        cell.expiryDate.text = food.value(forKeyPath: "expiryDate") as? String
+
         return cell
     }
 }

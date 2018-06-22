@@ -9,7 +9,7 @@
 import Foundation
 
 struct Food {
-    var id: Int
+    var id: UUID
     var name: String
     var expiryDate: Date
     var isExpired: Bool
