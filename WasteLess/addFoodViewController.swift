@@ -11,8 +11,21 @@ import CoreData
 
 class addFoodViewController: UIViewController {
 
+    
+    @IBOutlet weak var addFoodLabel: UILabel!
+    @IBOutlet weak var textFood: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var components = DateComponents()
+        components.year = -100
+        let minDate = Calendar.current.date(byAdding: components, to: Date())
+        
+        
+        self.datePicker.minimumDate = minDate
 
     }
 
