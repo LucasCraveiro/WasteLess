@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.groceryTableView.delegate = self
         self.groceryTableView.dataSource = self
+        title = "Waste Less"
         
     }
 }
