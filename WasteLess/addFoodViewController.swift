@@ -39,34 +39,40 @@ class addFoodViewController: UIViewController {
         let foodInformation = Food(id: idFood, name: foodToSave!, expiryDate: dateToSave, isExpired: false)
         
         
-//        guard let appDelegate =
-//            UIApplication.shared.delegate as? AppDelegate else {
-//                return
-//        }
-//
-//        // 1
-//        let managedContext =
-//            appDelegate.persistentContainer.viewContext
-//
-//        // 2
-//        let entity =
-//            NSEntityDescription.entity(forEntityName: "Product",
-//                                       in: managedContext)!
-//
-//        let food = NSManagedObject(entity: entity,
-//                                     insertInto: managedContext)
-//
-//        // 3
-//        food.setValue(name, forKeyPath: "name")
-//
-//        // 4
-//        do {
-//            try managedContext.save()
-//            .append(food)
-//        } catch let error as NSError {
-//            print("Could not save. \(error), \(error.userInfo)")
-//        }
-//
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+
+        // 2
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Product",
+                                       in: managedContext)!
+
+        let food = NSManagedObject(entity: entity,
+                                     insertInto: managedContext)
+
+        // 3
+        food.setValue(foodInformation.id, forKeyPath: "id")
+        food.setValue(foodInformation.name, forKey: "name")
+        food.setValue(foodInformation.expiryDate, forKey: "expiryDate")
+        food.setValue(foodInformation.isExpired, forKey: "isExpired")
+
+        
+
+        // 4
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        dismiss(animated: true, completion: nil)
+//        self.navigationController?.popViewController(animated: true)
     }
     
 }

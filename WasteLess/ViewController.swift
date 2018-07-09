@@ -19,6 +19,32 @@ class ViewController: UIViewController {
         self.groceryTableView.delegate = self
         self.groceryTableView.dataSource = self
         title = "Waste Less"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // fetch data from the database.
+        super.viewWillAppear(animated)
+        
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Product")
+        
+        //3
+        do {
+            groceryList = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
         
     }
 }
