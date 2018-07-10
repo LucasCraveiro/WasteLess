@@ -67,12 +67,13 @@ class addFoodViewController: UIViewController {
         // 4
         do {
             try managedContext.save()
+            self.navigationController?.popViewController(animated: true)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+//        print("working")
+        // dismiss -> navigation controller (x)
         
-        dismiss(animated: true, completion: nil)
-//        self.navigationController?.popViewController(animated: true)
     }
     
 }
