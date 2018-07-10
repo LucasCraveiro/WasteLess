@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         title = "Waste Less"
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         // fetch data from the database.
         super.viewWillAppear(animated)
@@ -75,7 +76,6 @@ extension ViewController: UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, YYYY"
         let stringDate = dateFormatter.string(from: date)
-//        print(stringDate)
         
         cell.expiryDate.text = stringDate.description
 
@@ -139,8 +139,20 @@ extension ViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [action])
     }
     
+    // Fix the height of cells
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+    
+    //Changes the cells background
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row % 2 == 0 {
+            let altCellColor: UIColor? = UIColor(red:0.94, green:0.96, blue:0.76, alpha:0.5)
+            cell.backgroundColor = altCellColor
+        } else {
+            let altCellColor: UIColor? = UIColor(red:0.86, green:0.93, blue:0.78, alpha:0.5)
+            cell.backgroundColor = altCellColor
+        }
     }
 }
 
