@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         self.groceryTableView.delegate = self
         self.groceryTableView.dataSource = self
         title = "Waste Less"
-//        groceryTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,21 +71,26 @@ extension ViewController: UITableViewDataSource {
         
         cell.foodName.text = food.value(forKeyPath: "name") as? String
         let date = food.value(forKeyPath: "expiryDate") as! Date
-        cell.expiryDate.text = date.description
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, YYYY"
+        let stringDate = dateFormatter.string(from: date)
+//        print(stringDate)
+        
+        cell.expiryDate.text = stringDate.description
 
         return cell
     }
 }
 
-// database : array
+// Database : Array and Core Data - Delete and Update
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-    }
+    
+   // Delete from Core Data
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
@@ -134,23 +138,9 @@ extension ViewController: UITableViewDelegate {
         action.backgroundColor = .black
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
 }
 
-//extension ViewController: NSFetchedResultsControllerDelegate {
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        groceryTableView.beginUpdates()
-//    }
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        groceryTableView.endUpdates()
-//    }
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        switch type {
-//        case .insert:
-//            if let indexPath = newIndexPath {
-//                groceryTableView.insertRows(at: [indexPath], with: .automatic)
-//            }
-//        default:
-//            break
-//        }
-//    }
-//}

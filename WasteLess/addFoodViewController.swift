@@ -19,11 +19,9 @@ class addFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textFood.delegate = self
-        
         // Adjusting minimumDate (DatePicker for current day)
         let currentDate = Date()
         self.datePicker.minimumDate = currentDate
-
     }
 
     @IBAction func addFood(_ sender: Any) {
@@ -37,7 +35,6 @@ class addFoodViewController: UIViewController {
         let idFood = UUID()
         //object created
         let foodInformation = Food(id: idFood, name: foodToSave!, expiryDate: dateToSave, isExpired: false)
-        
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -55,15 +52,11 @@ class addFoodViewController: UIViewController {
 
         let food = NSManagedObject(entity: entity,
                                      insertInto: managedContext)
-
         // 3
         food.setValue(foodInformation.id, forKeyPath: "id")
         food.setValue(foodInformation.name, forKey: "name")
         food.setValue(foodInformation.expiryDate, forKey: "expiryDate")
         food.setValue(foodInformation.isExpired, forKey: "isExpired")
-
-        
-
         // 4
         do {
             try managedContext.save()
@@ -71,9 +64,6 @@ class addFoodViewController: UIViewController {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-//        print("working")
-        // dismiss -> navigation controller (x)
-        
     }
     
 }
