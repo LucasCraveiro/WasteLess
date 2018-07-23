@@ -1,21 +1,21 @@
 //
-//  ViewController.swift
+//  SpoiledFoodViewController.swift
 //  WasteLess
 //
-//  Created by Lucas Craveiro on 2018-06-19.
+//  Created by Lucas Craveiro on 2018-07-23.
 //  Copyright © 2018 Lucas Craveiro. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var groceryTableView: UITableView!
+class SpoiledFoodViewController: UIViewController {
+   
+    @IBOutlet weak var spoiledGroceryTableView: UITableView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var messageLabel: UILabel!
     
-    var groceryList: [NSManagedObject] = [] {
+    var spoiledGroceryList: [NSManagedObject] = [] {
         didSet {
             updateView()
         }
@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.groceryTableView.delegate = self
-        self.groceryTableView.dataSource = self
+        self.spoiledGroceryTableView.delegate = self
+        self.spoiledGroceryTableView.dataSource = self
         title = "Waste Less"
     }
     
@@ -34,14 +34,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         getData()
         setupView()
-        groceryTableView.reloadData()
+        spoiledGroceryTableView.reloadData()
         
     }
     
     private func updateView() {
-        let hasGroceryList = groceryList.count > 0
+        let hasGroceryList = spoiledGroceryList.count > 0
         
-        groceryTableView.isHidden = !hasGroceryList
+        spoiledGroceryTableView.isHidden = !hasGroceryList
         messageLabel.isHidden = hasGroceryList
         activityIndicatorView.stopAnimating()
     }
@@ -67,25 +67,25 @@ class ViewController: UIViewController {
             appDelegate.persistentContainer.viewContext
         
         //2
-        let fetchRequest =
+        let fetchRequest1 =
             NSFetchRequest<NSManagedObject>(entityName: "Product")
         let sortDescriptors = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptors]
+        fetchRequest1.sortDescriptors = [sortDescriptors]
         let currentDate = Date()
-        fetchRequest.predicate = NSPredicate(format: "expiryDate >= %@", currentDate as CVarArg)
+        fetchRequest1.predicate = NSPredicate(format: "expiryDate < %@", currentDate as CVarArg)
         
         //3
         do {
-            groceryList = try managedContext.fetch(fetchRequest)
+            spoiledGroceryList = try managedContext.fetch(fetchRequest1)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension SpoiledFoodViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groceryList.count
+        return spoiledGroceryList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,13 +94,13 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
-        let food = groceryList[indexPath.row]
+        
+        let food = spoiledGroceryList[indexPath.row]
         
         
         
         
-        let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
+        let cell = spoiledGroceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
         
         cell.foodName.text = food.value(forKeyPath: "name") as? String
         let date = food.value(forKeyPath: "expiryDate") as! Date
@@ -110,24 +110,24 @@ extension ViewController: UITableViewDataSource {
         let stringDate = dateFormatter.string(from: date)
         
         cell.expiryDate.text = stringDate.description
-
+        
         return cell
     }
 }
 
 // Database : Array and Core Data - Delete and Update
 
-extension ViewController: UITableViewDelegate {
+extension SpoiledFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-   // Delete from Core Data
+    // Delete from Core Data
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             // ToDo: Delete
-            let food = self.groceryList[indexPath.row]
+            let food = self.spoiledGroceryList[indexPath.row]
             
             //1
             guard let appDelegate =
@@ -141,20 +141,20 @@ extension ViewController: UITableViewDelegate {
             managedContext.delete(food)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             //4
-            let fetchRequest =
+            let fetchRequest1 =
                 NSFetchRequest<NSManagedObject>(entityName: "Product")
             let sortDescriptors = NSSortDescriptor(key: "name", ascending: true)
-            fetchRequest.sortDescriptors = [sortDescriptors]
+            fetchRequest1.sortDescriptors = [sortDescriptors]
             let currentDate = Date()
-
-            fetchRequest.predicate = NSPredicate(format: "expiryDate >= %@", currentDate as CVarArg)
+            
+            fetchRequest1.predicate = NSPredicate(format: "expiryDate >= %@", currentDate as CVarArg)
             //5
             do {
-                self.groceryList = try managedContext.fetch(fetchRequest)
+                self.spoiledGroceryList = try managedContext.fetch(fetchRequest1)
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
-        
+            
             tableView.reloadData()
             completion(true)
         }
@@ -190,4 +190,3 @@ extension ViewController: UITableViewDelegate {
         }
     }
 }
-

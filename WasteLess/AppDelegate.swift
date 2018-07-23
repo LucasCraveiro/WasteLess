@@ -13,10 +13,36 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = UINavigationController(rootViewController:ViewController())
+        
+        let tabBarController = UITabBarController()
+        let goodFood = ViewController()
+        let badFood = SpoiledFoodViewController()
+        
+        goodFood.title = "Food"
+        badFood.title = "Spoiled"
+        
+        goodFood.tabBarItem = UITabBarItem(title: "fries", image: #imageLiteral(resourceName: "fries"), selectedImage: #imageLiteral(resourceName: "fries"))
+        
+        badFood.tabBarItem = UITabBarItem(title: "garbage", image: #imageLiteral(resourceName: "garbage"), selectedImage: #imageLiteral(resourceName: "garbage"))
+        
+        let baseControllers = [goodFood, badFood]
+        
+        tabBarController.viewControllers = baseControllers.map {UINavigationController(rootViewController: $0)}
+
+        window?.rootViewController = tabBarController
+
+        window?.makeKeyAndVisible()
+
+
+        
+        
         return true
     }
 
