@@ -144,7 +144,7 @@ extension SpoiledFoodViewController: UITableViewDelegate {
             fetchRequest1.sortDescriptors = [sortDescriptors]
             let currentDate = Date()
             
-            fetchRequest1.predicate = NSPredicate(format: "expiryDate >= %@", currentDate as CVarArg)
+            fetchRequest1.predicate = NSPredicate(format: "expiryDate < %@", currentDate as CVarArg)
             //5
             do {
                 self.spoiledGroceryList = try managedContext.fetch(fetchRequest1)
