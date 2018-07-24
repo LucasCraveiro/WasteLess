@@ -97,19 +97,16 @@ extension SpoiledFoodViewController: UITableViewDataSource {
         
         let food = spoiledGroceryList[indexPath.row]
         
+        let cell = spoiledGroceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customSpoiledTableViewCell
         
-        
-        
-        let cell = spoiledGroceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
-        
-        cell.foodName.text = food.value(forKeyPath: "name") as? String
+        cell.foodNameSpoiled.text = food.value(forKeyPath: "name") as? String
         let date = food.value(forKeyPath: "expiryDate") as! Date
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, YYYY"
         let stringDate = dateFormatter.string(from: date)
         
-        cell.expiryDate.text = stringDate.description
+        cell.expiredDate.text = stringDate.description
         
         return cell
     }
