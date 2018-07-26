@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3D19EE6620DC44E3006551A8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6520DC44E3006551A8 /* Food.swift */; };
-		3D19EE6820DC64B7006551A8 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */; };
-		3D19EE6A20DC69F4006551A8 /* addFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */; };
+		3D19EE6820DC64B7006551A8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6720DC64B7006551A8 /* CustomTableViewCell.swift */; };
+		3D19EE6A20DC69F4006551A8 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19EE6920DC69F4006551A8 /* AddFoodViewController.swift */; };
 		3D4EB61A21068C3500CC46E9 /* SpoiledFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4EB61921068C3500CC46E9 /* SpoiledFoodViewController.swift */; };
-		3DBB476B2107C17300D0910D /* customSpoiledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBB476A2107C17300D0910D /* customSpoiledTableViewCell.swift */; };
+		3D5CD5CA21092FC4004410DB /* SpoiledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5CD5C921092FC4004410DB /* SpoiledTableViewCell.swift */; };
 		3DCB839020D9B6E100F18374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB838F20D9B6E100F18374 /* AppDelegate.swift */; };
 		3DCB839220D9B6E100F18374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB839120D9B6E100F18374 /* ViewController.swift */; };
 		3DCB839520D9B6E100F18374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB839320D9B6E100F18374 /* Main.storyboard */; };
@@ -22,10 +22,10 @@
 
 /* Begin PBXFileReference section */
 		3D19EE6520DC44E3006551A8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
-		3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFoodViewController.swift; sourceTree = "<group>"; };
+		3D19EE6720DC64B7006551A8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3D19EE6920DC69F4006551A8 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		3D4EB61921068C3500CC46E9 /* SpoiledFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoiledFoodViewController.swift; sourceTree = "<group>"; };
-		3DBB476A2107C17300D0910D /* customSpoiledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customSpoiledTableViewCell.swift; sourceTree = "<group>"; };
+		3D5CD5C921092FC4004410DB /* SpoiledTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoiledTableViewCell.swift; sourceTree = "<group>"; };
 		3DCB838C20D9B6E100F18374 /* WasteLess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WasteLess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCB838F20D9B6E100F18374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DCB839120D9B6E100F18374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,10 +74,10 @@
 				3DCB839E20D9B6E300F18374 /* Info.plist */,
 				3DCB839620D9B6E100F18374 /* WasteLess.xcdatamodeld */,
 				3D19EE6520DC44E3006551A8 /* Food.swift */,
-				3D19EE6720DC64B7006551A8 /* customTableViewCell.swift */,
-				3D19EE6920DC69F4006551A8 /* addFoodViewController.swift */,
+				3D19EE6720DC64B7006551A8 /* CustomTableViewCell.swift */,
+				3D19EE6920DC69F4006551A8 /* AddFoodViewController.swift */,
 				3D4EB61921068C3500CC46E9 /* SpoiledFoodViewController.swift */,
-				3DBB476A2107C17300D0910D /* customSpoiledTableViewCell.swift */,
+				3D5CD5C921092FC4004410DB /* SpoiledTableViewCell.swift */,
 			);
 			path = WasteLess;
 			sourceTree = "<group>";
@@ -154,11 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4EB61A21068C3500CC46E9 /* SpoiledFoodViewController.swift in Sources */,
-				3D19EE6A20DC69F4006551A8 /* addFoodViewController.swift in Sources */,
-				3DBB476B2107C17300D0910D /* customSpoiledTableViewCell.swift in Sources */,
+				3D19EE6A20DC69F4006551A8 /* AddFoodViewController.swift in Sources */,
 				3DCB839220D9B6E100F18374 /* ViewController.swift in Sources */,
+				3D5CD5CA21092FC4004410DB /* SpoiledTableViewCell.swift in Sources */,
 				3D19EE6620DC44E3006551A8 /* Food.swift in Sources */,
-				3D19EE6820DC64B7006551A8 /* customTableViewCell.swift in Sources */,
+				3D19EE6820DC64B7006551A8 /* CustomTableViewCell.swift in Sources */,
 				3DCB839020D9B6E100F18374 /* AppDelegate.swift in Sources */,
 				3DCB839820D9B6E100F18374 /* WasteLess.xcdatamodeld in Sources */,
 			);

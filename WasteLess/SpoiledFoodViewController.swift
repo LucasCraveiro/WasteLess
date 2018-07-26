@@ -25,7 +25,9 @@ class SpoiledFoodViewController: UIViewController {
         super.viewDidLoad()
         self.spoiledGroceryTableView.delegate = self
         self.spoiledGroceryTableView.dataSource = self
-        title = "Waste Less"
+        let tabBarTitle = UITabBarItem()
+        tabBarTitle.title = "Spoiled Food"
+        title = "Spoiled Food"
     }
     
     
@@ -94,10 +96,10 @@ extension SpoiledFoodViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let food = spoiledGroceryList[indexPath.row]
         
-        let cell = spoiledGroceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customSpoiledTableViewCell
+        let cell = spoiledGroceryTableView.dequeueReusableCell(withIdentifier: "SpoiledCell", for: indexPath) as! SpoiledTableViewCell
+        
         
         cell.foodNameSpoiled.text = food.value(forKeyPath: "name") as? String
         let date = food.value(forKeyPath: "expiryDate") as! Date

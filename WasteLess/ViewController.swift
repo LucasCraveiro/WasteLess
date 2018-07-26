@@ -25,7 +25,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.groceryTableView.delegate = self
         self.groceryTableView.dataSource = self
-        title = "Waste Less"
+        
+        title = "Good Food"
+
+        let tabBarTitle = UITabBarItem()
+        tabBarTitle.title = "Good Food"
+        
+    
         
     }
     
@@ -101,7 +107,7 @@ extension ViewController: UITableViewDataSource {
         
         
         
-        let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! customTableViewCell
+        let cell = groceryTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
         cell.foodName.text = food.value(forKeyPath: "name") as? String
         let date = food.value(forKeyPath: "expiryDate") as! Date
