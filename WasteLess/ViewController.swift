@@ -171,15 +171,15 @@ extension ViewController: UITableViewDelegate {
     }
     
     
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .destructive, title: "Update") { (action, view, completion) in
-            // ToDo: Update
-            completion(true)
-        }
-        action.image = #imageLiteral(resourceName: "pencil")
-        action.backgroundColor = .black
-        return UISwipeActionsConfiguration(actions: [action])
-    }
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let action = UIContextualAction(style: .destructive, title: "Update") { (action, view, completion) in
+//            // ToDo: Update
+//            completion(true)
+//        }
+//        action.image = #imageLiteral(resourceName: "pencil")
+//        action.backgroundColor = .black
+//        return UISwipeActionsConfiguration(actions: [action])
+//    }
     
     // Fix the height of cells
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
