@@ -1,5 +1,5 @@
 //
-//  addFoodViewController.swift
+//  AddFoodViewController.swift
 //  WasteLess
 //
 //  Created by Lucas Craveiro on 2018-06-21.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class addFoodViewController: UIViewController {
+class AddFoodViewController: UIViewController {
 
     @IBOutlet weak var addFoodLabel: UILabel!
     @IBOutlet weak var textFood: UITextField!
@@ -68,7 +68,7 @@ class addFoodViewController: UIViewController {
     
 }
 // Keyboard goes down when you type return
-extension addFoodViewController: UITextFieldDelegate {
+extension AddFoodViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
