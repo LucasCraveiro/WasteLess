@@ -230,6 +230,7 @@
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rKd-CQ-Gc7">
                                 <rect key="frame" x="0.0" y="190" width="375" height="216"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.42733304794520549" colorSpace="custom" customColorSpace="sRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="551396294.200176">
                                     <!--2018-06-22 21:38:14 +0000-->
                                 </date>
@@ -239,7 +240,7 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR0-eB-E7V">
                                 <rect key="frame" x="70" y="413.5" width="235" height="37"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
